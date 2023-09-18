@@ -1,7 +1,7 @@
 import React, { useEffect, useContext, useRef, useState } from 'react'
 import { useNavigate, Link, Outlet } from 'react-router-dom';
 import SabjiContext from '../context/Contexts';
-import Horizontalnav from "./Horizontalnav";
+import Horizontalnav from "./Horizontalnav";   
 import Style from './Styles.css'
 import Alert from './Alert';
 export default function Customer() {
@@ -70,7 +70,7 @@ export default function Customer() {
           <div className="modal-content ">
             <div className="modal-header">
               <h5 className="modal-title" id="exampleModalLabel">Add Customer</h5>
-              <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+               <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div className="modal-body ">
               <div className="container"><input type="text" name='name' onChange={onchange} value={cust_name.name} /></div>
