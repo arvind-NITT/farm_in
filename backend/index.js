@@ -4,7 +4,7 @@ const auth = require('./routes/auth');
 const cors = require('cors');
 const tools = require('./routes/tools');
 const mongoose= require('mongoose');
-const port = 5000;
+const port = process.env.PORT;
 
 ////
 
