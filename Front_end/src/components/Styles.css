@@ -1,0 +1,659 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+}
+
+/* .loader{
+  margin-left: 38vw;
+  margin-top: 50px;
+justify-content: space-between;
+align-items: flex-end;
+flex-wrap: wrap;
+display: flex;
+height: 75px;
+width: 120px;
+
+}
+.loader span{
+margin: auto;
+text-transform: uppercase;
+font-size: 22px;
+}
+.log{
+  background: linear-gradient(90deg ,rgb(48, 35, 45) 60%, rgb(37, 36, 35) 60%);
+}
+.nav_links{
+  margin: 8px;
+  text-align: center;
+  color: #fffcfc  ;
+  list-style: none;
+  text-decoration:none;
+font-family: 'Karla', sans-serif;
+  font-size: 25px;
+ 
+  
+}
+.nav_links  :hover{
+     color: rgba(220, 227, 223, 0.955);
+}
+.main{
+  background-color: #39383d;
+  
+  width:100%;
+
+  min-height: 100vh;
+
+
+}
+.logincards{
+  width: 391px;
+  height: 400px;
+
+  margin:110px;
+  font-size:25px;
+  font-family: 'Karla', sans-serif;
+  border-radius: 6px;
+  box-shadow:  0 4px 8px 0  rgb(225, 236, 225) ;
+     border: 1px solid rgb(201, 246, 181);
+ 
+     text-align: start;
+}
+.dashboard_cards{
+  width: 291px;
+  height: 137px;
+  margin:20px;
+  font-size:30px;
+  font-family: 'Karla', sans-serif;
+  border-radius: 6px;
+  box-shadow:  0 4px 8px 0  rgb(225, 236, 225) ;
+     border: 1px solid rgb(201, 246, 181);
+     -webkit-text-fill-color: #0000;
+     -webkit-background-clip: text;
+     background-image: linear-gradient(90deg,#e46424,#fffaf0);
+     text-align: center;
+}
+.dashboard_cards img{
+
+  width: 68px;
+  height: 68px;
+  border-radius: 29px;
+
+}
+.st{
+  position:sticky;
+  top:0%;
+  z-index: 2;
+
+}
+
+.ball{
+width: 25px;
+height: 25px;
+border-radius: 50%;
+background-color: rgb(201, 206, 202);
+animation: bounce .5s alternate infinite;
+}
+.MY_card{
+  width: 291px;
+  height: 137px;
+  margin: auto ;
+
+  font-size:25px;
+  border: solid #fffaf0 1px ;
+  font-family: 'Karla', sans-serif;
+  box-shadow:  0 4px 8px 0  rgb(231, 239, 231) ;
+  background-color: rgb(27 27 32);
+
+  border-radius: 7px;
+}
+
+.subtitle{
+  margin-top: 1rem;
+  font-size:20px;
+  font-family: 'Karla', sans-serif;
+
+}
+.hline{
+  -webkit-text-fill-color: #0000;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(90deg,#e46424,#fffaf0);
+}
+.ball:nth-child(2){
+animation-delay: .16s;
+}
+.ball:nth-child(3){
+animation-delay: .32s;
+}
+.txt{
+  text-align: center;
+  color: #ffffff  ;
+  font-size:25px;
+  font-family: 'Karla', sans-serif;
+  margin: 1rem;
+
+  background-image: url("https://www.pexels.com/photo/close-up-photo-ofg-light-bulb-716398/");
+
+}
+.txt_heading{
+  text-align: center;
+  font-family: 'Karla', sans-serif;
+     font-size: 42px;
+
+    -webkit-text-fill-color: #e5e1e100;
+    -webkit-background-clip: text;
+    background-image: linear-gradient(91deg,#ffe5d9,#d94a03);
+}
+
+.details_cards{
+  width: 1200px;
+  box-shadow:  0 4px 8px 0  rgb(225, 236, 225) ;
+  border: 1px solid rgb(201, 246, 181);
+  margin: 40px;
+  max-height: 700px;
+  overflow-y: scroll;
+ 
+}
+
+.details_cards ::-webkit-scrollbar{
+  scrollbar-face-color: #3d3938;
+  scrollbar-track-color: #3d3938;
+}
+
+@keyframes bounce {
+ from{
+     transform: scaleX(1.25);
+ }    
+ to{
+     transform: translateY(-50px) scaleX(1);
+ }
+}
+
+.home_card {
+  display: flex;
+  height: 280px;
+  width: 200px;
+  background-color: #17141d;
+  border-radius: 10px;
+  box-shadow: -1rem 0 3rem #000;
+
+  transition: 0.4s ease-out;
+  position: relative;
+  left: 0px;
+}
+.fetch_date{
+   width: 100%;
+   height: auto;
+   background-color: #3d3938;
+
+}
+.card:not(:first-child) {
+    margin-left: -50px;
+}
+
+.card:hover {
+  transform: translateY(-20px);
+  transition: 0.4s ease-out;
+}
+
+.home_card:hover ~ .card {
+  position: relative;
+  left: 50px;
+  transition: 0.4s ease-out;
+}
+
+.title {
+  color: white;
+  font-weight: 300;
+  position: absolute;
+  left: 20px;
+  top: 15px;
+}
+
+.bar {
+  position: absolute;
+  top: 100px;
+  left: 20px;
+  height: 5px;
+  width: 150px;
+}
+
+.emptybar {
+  background-color: #2e3033;
+  width: 100%;
+  height: 100%;
+}
+
+.filledbar {
+  position: absolute;
+  top: 0px;
+  z-index: 3;
+  width: 0px;
+  height: 100%;
+  background: rgb(0,154,217);
+  background: linear-gradient(90deg, rgba(0,154,217,1) 0%, rgba(217,147,0,1) 65%, rgba(255,186,0,1) 100%);
+  transition: 0.6s ease-out;
+}
+
+.home_card:hover .filledbar {
+  width: 120px;
+  transition: 0.4s ease-out;
+}
+
+.circle {
+  position: absolute;
+  top: 150px;
+  left: calc(50% - 60px);
+}
+
+.stroke {
+  stroke: white;
+  stroke-dasharray: 360;
+  stroke-dashoffset: 360;
+  transition: 0.6s ease-out;
+}
+
+svg {
+  fill: #17141d;
+  stroke-width: 2px;
+}
+
+.home_card:hover .stroke {
+  stroke-dashoffset: 100;
+  transition: 0.6s ease-out;
+} */
+
+.loader{
+  margin-left: 38vw;
+  margin-top: 50px;
+justify-content: space-between;
+align-items: flex-end;
+flex-wrap: wrap;
+display: flex;
+height: 75px;
+width: 120px;
+
+}
+.loader span{
+margin: auto;
+text-transform: uppercase;
+font-size: 22px;
+}
+.log{
+ 
+  background: linear-gradient(90deg ,rgb(48, 35, 45) 60%, rgb(37, 36, 35) 60%);
+}
+.nav_links{
+  margin: 8px;
+  text-align: center;
+  color: #fffcfc  ;
+  list-style: none;
+  text-decoration:none;
+ 
+font-family: 'Karla', sans-serif;
+ 
+  font-size: 25px;
+ 
+  
+}
+.nav_links  :hover{
+     color: rgba(220, 227, 223, 0.955);
+ 
+}
+.navbar_css{
+  background-color: white;
+  color: #000;
+  text-align: center;
+  margin-top: 20px;
+}
+.main{
+  background-color: #ffffff;
+
+  width:100%;
+
+  min-height: 100vh;
+
+  
+}
+.logincards{
+  width: 391px;
+  height: 400px;
+ 
+  margin:110px;
+  font-size:25px;
+  font-family: 'Karla', sans-serif;
+  border-radius: 6px;
+  box-shadow:  0 4px 8px 0  rgb(225, 236, 225) ;
+     border: 1px solid rgb(201, 246, 181);
+
+     text-align: start;
+}
+.dashboard_cards1{
+  width: 291px;
+  height: 137px;
+
+  /* background-color: #b9a59b;
+   
+  */
+  background: #d94a03;
+  margin:20px;
+  font-size:30px;
+  font-family: 'Karla', sans-serif;
+  border-radius: 6px;
+  box-shadow:  0 4px 8px 0  rgb(225, 236, 225) ;
+     border: 1px solid rgb(201, 246, 181);
+     -webkit-text-fill-color: #0000;
+     -webkit-background-clip: text;
+     background-image: linear-gradient(90deg,#e46424,#fffaf0);
+     text-align: center;
+   
+}
+.dashboard_cards2{
+  width: 291px;
+  height: 137px;
+
+  background-color: #e46424;
+  margin:20px;
+  font-size:30px;
+  font-family: 'Karla', sans-serif;
+  border-radius: 6px;
+  box-shadow:  0 4px 8px 0  rgb(225, 236, 225) ;
+     border: 1px solid rgb(201, 246, 181);
+     -webkit-text-fill-color: #0000;
+     -webkit-background-clip: text;
+     background-image: linear-gradient(90deg,#e46424,#fffaf0);
+     text-align: center;
+   
+}
+.dashboard_cards3{
+  width: 291px;
+  height: 137px;
+
+  background-color: #e46424;
+  margin:20px;
+  font-size:30px;
+  font-family: 'Karla', sans-serif;
+  border-radius: 6px;
+  box-shadow:  0 4px 8px 0  rgb(225, 236, 225) ;
+     border: 1px solid rgb(201, 246, 181);
+     -webkit-text-fill-color: #0000;
+     -webkit-background-clip: text;
+     background-image: linear-gradient(90deg,#e46424,#fffaf0);
+     text-align: center;
+   
+}
+.dashboard_cards4{
+  width: 291px;
+  height: 137px;
+
+  background-color: #e46424;
+  margin:20px;
+  font-size:30px;
+  font-family: 'Karla', sans-serif;
+  border-radius: 6px;
+  box-shadow:  0 4px 8px 0  rgb(225, 236, 225) ;
+     border: 1px solid rgb(201, 246, 181);
+     -webkit-text-fill-color: #0000;
+     -webkit-background-clip: text;
+     background-image: linear-gradient(90deg,#e46424,#fffaf0);
+     text-align: center;
+   
+}
+.dashboard_cards img{
+
+  width: 68px;
+  height: 68px;
+  border-radius: 29px;
+ 
+}
+.st{
+  position:sticky;
+  top:0%;
+  z-index: 2;
+ 
+}
+.m0p0{
+	margin: 0;
+	padding: 0;
+}
+
+.ball{
+width: 25px;
+height: 25px;
+border-radius: 50%;
+background-color: rgb(201, 206, 202);
+animation: bounce .5s alternate infinite;
+}
+.sideimages{
+  /* background-image: url("./images/veg_side_image.png"); */
+  background-image: url("./images/mona-eendra-vC8wj_Kphak-unsplash.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  border-radius: 2% 32%;
+  /* width: auto; */
+}
+
+.onhowertomycard :hover {
+  cursor:pointer;
+}
+.MY_card_for_customer{
+  width: 300px;
+  height: 337px;
+  margin: 50px ;
+  background-image: url("./images/customer_background.jpg");
+  background-size: cover;
+  /* background-color: #e5f3ff; */
+  font-size:35px;
+  border: solid #fffaf0 1px ;
+  font-family: 'Karla', 'sans-serif';
+  color: #000;
+  box-shadow:  0 4px 8px 0  rgb(231, 239, 231) ;
+  /* background-color: rgb(27 27 32); */
+  border-radius: 7px;
+}
+.MY_card_for_add_{
+  width: 300px;
+  height: 337px;
+  margin: 50px ;
+  background-image: url("./images/addition.png");
+  background-size: cover;
+  /* background-color: #e5f3ff; */
+  font-size:35px;
+  border: solid #fffaf0 1px ;
+  font-family: 'Karla', 'sans-serif';
+  color: #000;
+  box-shadow:  0 4px 8px 0  rgb(231, 239, 231) ;
+  /* background-color: rgb(27 27 32); */
+  border-radius: 7px;
+}
+.MY_card_for_add_:hover{
+  cursor: pointer;
+}
+.class_for_hower:hover{
+  cursor: pointer;
+}
+.MY_card_for_veg{
+  width: 291px;
+  height: 137px;
+  margin: 50px ;
+  background-image: url("./images/veg_background.jpg");
+  background-size: cover;
+  font-size:25px;
+  border: solid #fffaf0 1px ;
+  font-family: 'Karla', 'sans-serif';
+  color: #000;
+  box-shadow:  0 4px 8px 0  rgb(231, 239, 231) ;
+  /* background-color: rgb(27 27 32); */
+  border-radius: 7px;
+}
+.MY_card_for_veg_add{
+  width: 291px;
+  height: 137px;
+  margin: 50px ;
+  background-image: url("./images/addition.png") ;
+  background-size: cover;
+  font-size:25px;
+  border: solid #fffaf0 1px ;
+  font-family: 'Karla', 'sans-serif';
+  color: #000;
+  box-shadow:  0 4px 8px 0  rgb(231, 239, 231) ;
+  /* background-color: rgb(27 27 32); */
+  border-radius: 7px;
+}
+
+.subtitle{
+  margin-top: 1rem;
+  font-size:20px;
+  font-family: 'Karla', sans-serif;
+
+}
+.hline{
+  -webkit-text-fill-color: #0000;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(90deg,#e46424,#fffaf0);
+}
+.ball:nth-child(2){
+animation-delay: .16s;
+}
+.ball:nth-child(3){
+animation-delay: .32s;
+}
+.txt{
+  text-align: left;
+  color: #181313  ;
+  font-size:35px;
+  font-family: 'Karla', 'sans-serif';
+  margin: 1rem;
+ 
+
+  background-image: url("https://www.pexels.com/photo/close-up-photo-ofg-light-bulb-716398/");
+  
+}
+.txt_heading{
+  text-align: center;
+  font-family: 'Karla', sans-serif;
+     font-size: 42px;
+ 
+    -webkit-text-fill-color: #e5e1e100;
+    -webkit-background-clip: text;
+    background-image: linear-gradient(91deg,#ffe5d9,#d94a03);
+}
+
+.details_cards{
+  width: 1200px;
+  box-shadow:  0 4px 8px 0  rgb(133, 154, 133) ;
+  border: 1px solid rgb(211, 238, 59);
+    background-color: #b0acaa;
+  margin: 40px;
+  max-height: 700px;
+  overflow-y: scroll;
+ 
+}
+
+.details_cards ::-webkit-scrollbar{
+  scrollbar-face-color: #3d3938;
+  scrollbar-track-color: #3d3938;
+}
+
+@keyframes bounce {
+ from{
+     transform: scaleX(1.25);
+ }    
+ to{
+     transform: translateY(-50px) scaleX(1);
+ }
+}
+
+.home_card {
+  display: flex;
+  height: 280px;
+  width: 200px;
+  background-color: #17141d;
+  border-radius: 10px;
+  box-shadow: -1rem 0 3rem #000;
+
+  transition: 0.4s ease-out;
+  position: relative;
+  left: 0px;
+}
+.fetch_date{
+   width: 100%;
+   height: auto;
+   background-color: #3d3938;
+
+}
+.card:not(:first-child) {
+    margin-left: -50px;
+}
+
+.card:hover {
+  transform: translateY(-20px);
+  transition: 0.4s ease-out;
+}
+
+.home_card:hover ~ .card {
+  position: relative;
+  left: 50px;
+  transition: 0.4s ease-out;
+}
+
+.title {
+  color: white;
+  font-weight: 300;
+  position: absolute;
+  left: 20px;
+  top: 15px;
+}
+
+.bar {
+  position: absolute;
+  top: 100px;
+  left: 20px;
+  height: 5px;
+  width: 150px;
+}
+
+.emptybar {
+  background-color: #2e3033;
+  width: 100%;
+  height: 100%;
+}
+
+.filledbar {
+  position: absolute;
+  top: 0px;
+  z-index: 3;
+  width: 0px;
+  height: 100%;
+  background: rgb(0,154,217);
+  background: linear-gradient(90deg, rgba(0,154,217,1) 0%, rgba(217,147,0,1) 65%, rgba(255,186,0,1) 100%);
+  transition: 0.6s ease-out;
+}
+
+.home_card:hover .filledbar {
+  width: 120px;
+  transition: 0.4s ease-out;
+}
+
+.circle {
+  position: absolute;
+  top: 150px;
+  left: calc(50% - 60px);
+}
+
+.stroke {
+  stroke: white;
+  stroke-dasharray: 360;
+  stroke-dashoffset: 360;
+  transition: 0.6s ease-out;
+}
+
+svg {
+  fill: #17141d;
+  stroke-width: 2px;
+}
+
+.home_card:hover .stroke {
+  stroke-dashoffset: 100;
+  transition: 0.6s ease-out;
+}
