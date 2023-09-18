@@ -38,7 +38,7 @@ export default function Login() {
   //     }
   }
   const onclickhandle1= async (e)=>{
-    const Url_to_Signup = 'http://localhost:5000/api/auth/signup'
+    const Url_to_Signup = 'https://farmin.onrender.com/api/auth/signup'
     const response = await fetch(Url_to_Signup, {
       method: 'POST', // or 'PUT'
       headers: {
@@ -68,7 +68,7 @@ export default function Login() {
          if(user.password==undefined || user.email ==undefined){
           showAlert("Kya kr rha he bhai ye ","danger");
          }
-    const Url_to_login = 'http://localhost:5000/api/auth/login'
+    const Url_to_login = 'https://farmin.onrender.com/api/auth/login'
     const response = await fetch(Url_to_login, {
       method: 'POST', // or 'PUT'
       headers: {
