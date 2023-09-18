@@ -7,7 +7,7 @@ import Alert from './Alert';
 export default function Customer() {
   const navigate = useNavigate();
   const [cust_name, set_cust_name] = useState({ name: "" });
-  const ref = useRef();
+  const ref = useRef();   
   const closeref = useRef();
   const context = useContext(SabjiContext);
   const { showAlert, setup_customer,customer, detetecustomer,setup, arrangedata, Fetch_all_components, setcustomer, add_customer } = context;

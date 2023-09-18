@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build":"cd backend && npm install && cd ../Front_end && npm install && npm run build",
-    "start":"node backend/index.js",
+    "start":"cd Front_end && npm run Dream_project",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

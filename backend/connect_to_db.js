@@ -1,13 +1,12 @@
-// const mongoose= require('mongoose');
-// const mangUri = "mongodb://127.0.0.1:27017/sabjimanagement";
+const mongoose= require('mongoose');
+const mangUri = "mongodb://127.0.0.1:27017/sabjimanagement";
 
-// function Connet_to_mongoose(){
-//       mongoose.connect(mangUri,(error)=>{
-//         console.log("Connected to db");
-//         console.log(error);
-//       })
+function Connet_to_mongoose(){
+      mongoose.connect(mangUri,(error)=>{
+        console.log("Connected to db");
+        console.log(error);
+      })
 
-// }
+}
 
-// module.exports= Connet_to_mongoose;
-//mongodb+srv://arvindmali9589:<password>@cluster0.veyar3w.mongodb.net/?retryWrites=true&w=majority
+module.exports= Connet_to_mongoose;
