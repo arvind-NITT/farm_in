@@ -11,6 +11,7 @@ import VeticalNavbar from "./VeticalNavbar";
 import Horizontalnav from "./Horizontalnav";
 import Loader from "./Loader"
 import Style from "./Styles1.css"
+let BACKEND_LINK=process.env.BACKEND_LINK;
 export default function Transaction() {
   ChartJS.register(ArcElement, Tooltip, Legend,CategoryScale,LinearScale,BarElement);
     const context = useContext(SabjiContext);
@@ -33,7 +34,7 @@ export default function Transaction() {
         showAlert("Check the dates ! \n Dates could not be in reverse order","danger");
         setLoading(false);
       }else{
-      const url = "http://localhost:5000/api/tools/filterBydate__item";
+      const url = `${BACKEND_LINK}/api/tools/filterBydate__item`;
       const response = await fetch(url, {
         method: "POST", // *GET, POST, PUT, DELETE, etc.
         headers: {

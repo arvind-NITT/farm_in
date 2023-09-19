@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import SabjiContext from '../context/Contexts';
 // import { Link,Outlet } from 'react-router-dom';
 import Style from './Styles1.css'
-
+let BACKEND_LINK=process.env.BACKEND_LINK;
 export default function Verifyotpsendbyforgotpassword(){
     const context= useContext(SabjiContext);  
     const { showAlert,username,setusername}=context;
@@ -16,7 +16,7 @@ export default function Verifyotpsendbyforgotpassword(){
     }
     const navigate = useNavigate()
     const onclickhandle= async (e)=>{
-      const Url_to_Signup = 'http://localhost:5000/api/auth/resendOtpVerificationcode'
+      const Url_to_Signup = `${BACKEND_LINK}/api/auth/resendOtpVerificationcode`
       const response = await fetch(Url_to_Signup, {
         method: 'POST', // or 'PUT'
         headers: {
@@ -40,7 +40,7 @@ export default function Verifyotpsendbyforgotpassword(){
         }
     }
     const onclickhandle1= async (e)=>{
-      const Url_to_Signup = 'http://localhost:5000/api/auth/verifyOtp'
+      const Url_to_Signup = '${BACKEND_LINK}/api/auth/verifyOtp'
       const response = await fetch(Url_to_Signup, {
         method: 'POST', // or 'PUT'
         headers: {

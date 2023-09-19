@@ -1,9 +1,12 @@
 import SabjiContext from "./Contexts";
 import React, { useState } from "react";
-// import { useNavigate } from "react-router-dom";
 
+let BACKEND_LINK=process.env.BACKEND_LINK;
+
+// import { useNavigate } from "react-router-dom"; 
+ 
 export default function SabjiSates(props) {
-  // const navigate = useNavigate();
+  // const navigate = useNavigate(); 
   const [setup_data, set_setup_data] = useState([]);
   const [setup_customer, set_setup_customer] = useState([]);
   const [setup_veges, set_setup_veges] = useState([]);
@@ -47,7 +50,7 @@ export default function SabjiSates(props) {
   };  
 
   const setup = async () => { 
-    const url = "http://localhost:5000/api/tools/sorteddata";
+    const url = `${BACKEND_LINK}/api/tools/sorteddata`;
     const response = await fetch(url, {
       method: "GET", // *GET, POST, PUT, DELETE, etc.
       headers: {
@@ -153,7 +156,7 @@ console.log(month_key1,month_val1);
   };
   const Delete_by_id = async (id) => {
     console.log(id);
-    const url = `http://localhost:5000/api/tools/dltItems/${id}`;
+    const url = `${BACKEND_LINK}/api/tools/dltItems/${id}`;
     const response = await fetch(url, {
       method: "DELETE", // *GET, POST, PUT, DELETE, etc.
       headers: {
@@ -168,7 +171,7 @@ console.log(month_key1,month_val1);
   };
   const Delete_by_date = async (date) => {
     console.log(date);
-    const url = "http://localhost:5000/api/tools/dltItem";
+    const url = `${BACKEND_LINK}/api/tools/dltItem`;
     const response = await fetch(url, {
       method: "DELETE", // *GET, POST, PUT, DELETE, etc.
       headers: {
@@ -184,7 +187,7 @@ console.log(month_key1,month_val1);
   };
 
   const additem = async (element) => {
-    const url = "http://localhost:5000/api/tools/addItem";
+    const url = `${BACKEND_LINK}/api/tools/addItem`;
     console.log("in add item ", element.date);
     const data = await fetch(url, {
       method: "POST", // or 'PUT'
@@ -210,7 +213,7 @@ console.log(month_key1,month_val1);
   const Fetch_all_components = async () => {
     setusername(username_)
     // try {
-      const Url_to_customer = "http://localhost:5000/api/tools/FetchCustomer";
+      const Url_to_customer = `${BACKEND_LINK}/api/tools/FetchCustomer`;
       const datacust = await fetch(Url_to_customer, {
         method: "get", // or 'PUT'
         headers: {
@@ -239,7 +242,7 @@ console.log(month_key1,month_val1);
       //   console.log(element)
 
       // }
-      const Url_to_Price = "http://localhost:5000/api/tools/Fetchprice";
+      const Url_to_Price = `${BACKEND_LINK}/api/tools/Fetchprice`;
       const dataprice = await fetch(Url_to_Price, {
         method: "get", // or 'PUT'
         headers: {
@@ -252,7 +255,7 @@ console.log(month_key1,month_val1);
       //  console.log(pricu)
       setprices(pricu);
       //  console.log(prices)
-      const Url_to_veg = "http://localhost:5000/api/tools/FetchVeges";  
+      const Url_to_veg = `${BACKEND_LINK}/api/tools/FetchVeges`;  
       const dataveg = await fetch(Url_to_veg, {
         method: "get", // or 'PUT'
         headers: {
@@ -265,7 +268,7 @@ console.log(month_key1,month_val1);
       console.log(veju);
       setveges(veju);
 
-      const Url_to_qauntities = "http://localhost:5000/api/tools/FetchQuantity";
+      const Url_to_qauntities = `${BACKEND_LINK}/api/tools/FetchQuantity`;
       const dataquanta = await fetch(Url_to_qauntities, {
         method: "get", // or 'PUT'
         headers: {
@@ -312,7 +315,7 @@ console.log(month_key1,month_val1);
       "date":date
 
     }
-    const url = "http://localhost:5000/api/tools/addItem";
+    const url = `${BACKEND_LINK}/api/tools/addItem`;
     // console.log("in add item ", element.date);
     const data = await fetch(url, {
       method: "POST", // or 'PUT'
@@ -334,7 +337,7 @@ console.log(month_key1,month_val1);
     // setcustomer(customer.concat(newcustomer.new_customer))
     showAlert("item Added", "success");
     setup();
-    const url1 = "http://localhost:5000/api/tools/addCustomer";
+    const url1 = `${BACKEND_LINK}/api/tools/addCustomer`;
     console.log(name);
     const data1 = await fetch(url1, {
       method: "POST", // or 'PUT'
@@ -364,7 +367,7 @@ console.log(month_key1,month_val1);
       })  
 
     console.log(name,id);
-    const url = `http://localhost:5000/api/tools/dltCustomer`;
+    const url = `${BACKEND_LINK}/api/tools/dltCustomer`;
 
     const data = await fetch(url, {
       method: "DELETE", // or 'PUT'
@@ -394,7 +397,7 @@ console.log(month_key1,month_val1);
       "date":date
 
     }
-    const url = "http://localhost:5000/api/tools/addItem";
+    const url = `${BACKEND_LINK}/api/tools/addItem`;
     // console.log("in add item ", element.date);
     const data = await fetch(url, {
       method: "POST", // or 'PUT'
@@ -412,7 +415,7 @@ console.log(month_key1,month_val1);
       }),
     });
     const newcustomer = await data.json();
-    const url1 = "http://localhost:5000/api/tools/addveges";
+    const url1 = `${BACKEND_LINK}/api/tools/addveges`;
 
     const data1 = await fetch(url1, {
       method: "POST", // or 'PUT'
@@ -441,7 +444,7 @@ console.log(month_key1,month_val1);
 
     console.log(name,id);
 
-    const url = `http://localhost:5000/api/tools/dltVeges`;
+    const url = `${BACKEND_LINK}/api/tools/dltVeges`;
 
     const data = await fetch(url, {
       method: "DELETE", // or 'PUT'

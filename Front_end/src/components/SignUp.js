@@ -2,6 +2,7 @@ import React,{useContext, useState} from 'react'
 import { useNavigate } from 'react-router-dom';
 import SabjiContext from '../context/Contexts';
 import { Link,Outlet } from 'react-router-dom';
+let BACKEND_LINK=process.env.BACKEND_LINK;
 export default function SignUp() {
     const context= useContext(SabjiContext);
     const { showAlert}=context;
@@ -13,7 +14,7 @@ export default function SignUp() {
     const navigate = useNavigate()
     const onclickhandle= async (e)=>{
 
-       const Url_to_Signup = 'http://localhost:5000/api/auth/signup'
+       const Url_to_Signup = `${BACKEND_LINK}/api/auth/signup`
       const response = await fetch(Url_to_Signup, {
         method: 'POST', // or 'PUT'
         headers: {
