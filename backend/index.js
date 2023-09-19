@@ -19,18 +19,18 @@ app.get('/',(req,res)=>{
     res.send("Hey Welcome ");
 });
  
-Connet_to_mongoose();
-app.listen(port,()=>{
-    console.log("Starting.....")
-})
-//  const func= async()=>{
-//     await mongoose.connect('mongodb+srv://arvindmali9589:tQ61u9ruTm5DadZ9@cluster0.veyar3w.mongodb.net/?retryWrites=true&w=majority');
-//      console.log("connecting");
-//      app.listen(port,()=>{
-//         console.log("Starting.....")
-//     })
-//  }
+// Connet_to_mongoose();
+// app.listen(port,()=>{
+//     console.log("Starting.....")
+// })
+ const func= async()=>{
+    await mongoose.connect('mongodb+srv://arvindmali9589:tQ61u9ruTm5DadZ9@cluster0.veyar3w.mongodb.net/?retryWrites=true&w=majority');
+     console.log("connecting");
+     app.listen(port,()=>{
+        console.log("Starting.....")
+    })
+ }
 
-//  func();
+ func();
 
 
