@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import SabjiContext from '../context/Contexts';
 // import { Link,Outlet } from 'react-router-dom';
 import Style from './Styles1.css'
-let BACKEND_LINK=process.env.BACKEND_LINK;
+import BACKEND_LINK from '../Helper';
 export default function ResetPassword(){
     const context= useContext(SabjiContext);  
     const { showAlert,username,setusername}=context;

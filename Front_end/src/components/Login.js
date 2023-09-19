@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import SabjiContext from '../context/Contexts';
 import { Link,Outlet } from 'react-router-dom';
 import Style from './Styles1.css'
-let BACKEND_LINK=process.env.BACKEND_LINK;
+import BACKEND_LINK from '../Helper';
 export default function Login() {
   const context= useContext(SabjiContext);  
   const { showAlert,username,setusername}=context;
@@ -15,28 +15,8 @@ export default function Login() {
   }
   const navigate = useNavigate()
   const onclickhandle2= async (e)=>{
-  //   const Url_to_Signup = '${BACKEND_LINK}/api/auth/signup'
-  //   const response = await fetch(Url_to_Signup, {
-  //     method: 'POST', // or 'PUT'
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //       "Access-Control-Allow-Origin": "*"
-  //     },
-  //     body: JSON.stringify( {name:user.name,email:user.email,password:user.password} ),
-  //   })
-  //   console.log(user);
-  //   const token = await response.json();
-  //   // console.log(ret_data);
-  // // console.log(token.errors[0].msg)
-  //   if(token.success===true) 
-  //   {
-  //     // localStorage.setItem('token',token.authtoken);
-  //     // console.log(token.authtoken)
+  
       navigate('/Verifyotpforforgotpassword',{replace:true});
-  //      showAlert("Check your mail ","success")
-  //   }else{
-  //       showAlert(token.message,"danger") 
-  //     }
   }
   const onclickhandle1= async (e)=>{
     const Url_to_Signup = `${BACKEND_LINK}/api/auth/signup`;

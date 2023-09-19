@@ -1,7 +1,7 @@
 import SabjiContext from "./Contexts";
 import React, { useState } from "react";
 
-let BACKEND_LINK=process.env.BACKEND_LINK;
+import BACKEND_LINK from '../Helper';
 
 // import { useNavigate } from "react-router-dom"; 
  

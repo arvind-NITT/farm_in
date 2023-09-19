@@ -11,7 +11,7 @@ import VeticalNavbar from "./VeticalNavbar";
 import Horizontalnav from "./Horizontalnav";
 import Loader from "./Loader"
 import Style from "./Styles1.css"
-let BACKEND_LINK=process.env.BACKEND_LINK;
+import BACKEND_LINK from '../Helper';
 export default function Transaction() {
   ChartJS.register(ArcElement, Tooltip, Legend,CategoryScale,LinearScale,BarElement);
     const context = useContext(SabjiContext);

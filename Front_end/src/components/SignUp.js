@@ -2,7 +2,7 @@ import React,{useContext, useState} from 'react'
 import { useNavigate } from 'react-router-dom';
 import SabjiContext from '../context/Contexts';
 import { Link,Outlet } from 'react-router-dom';
-let BACKEND_LINK=process.env.BACKEND_LINK;
+import BACKEND_LINK from '../Helper';
 export default function SignUp() {
     const context= useContext(SabjiContext);
     const { showAlert}=context;

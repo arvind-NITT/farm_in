@@ -1,0 +1,1 @@
+export const BACKEND_LINK="https://farminbackendserver.onrender.com/"
