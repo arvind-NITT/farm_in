@@ -5,7 +5,7 @@ import VerifyOtp from "./components/VerifyOtp";
 import SignUp from "./components/SignUp";
 import Home from "./components/Home";
 import SabjiSates from "./context/SabjiSates";
-import Details from "./components/Details";
+import Details from "./components/Details"; 
 import Item from "./components/Item";
 import Customer from "./components/Customer";
 import VegDetails from "./components/VegDetails";
@@ -21,7 +21,7 @@ import Verifyotpforforgotpassword from "./components/Verifyotpforforgotpassword"
 import Verifyotpsendbyforgotpassword from "./components/Verifyotpsendbyforgotpassword";
 import ResetPassword from "./components/ResetPassword";
 import One_veg_detail from "./components/One_veg_detail";
-
+// require('dotenv').config()
 function App() { 
   return (
     <SabjiSates>

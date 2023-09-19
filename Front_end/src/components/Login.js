@@ -3,9 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import SabjiContext from '../context/Contexts';
 import { Link,Outlet } from 'react-router-dom';
 import Style from './Styles1.css'
-import BACKEND_LINK from '../Helper';
+// import  BACKEND_LINK from '../Helper';
 export default function Login() {
   const context= useContext(SabjiContext);  
+  // const BACKEND_LINK="https://farminbackendserver.onrender.com/";
   const { showAlert,username,setusername}=context;
   const [user,setUser]=useState(null)
   const Onchange=(e)=>{
@@ -19,7 +20,7 @@ export default function Login() {
       navigate('/Verifyotpforforgotpassword',{replace:true});
   }
   const onclickhandle1= async (e)=>{
-    const Url_to_Signup = `${BACKEND_LINK}/api/auth/signup`;
+    const Url_to_Signup = ` ${process.env.REACT_APP_BACKEND_LINK}/api/auth/signup`;
     const response = await fetch(Url_to_Signup, {
       method: 'POST', // or 'PUT'
       headers: {
@@ -49,7 +50,7 @@ export default function Login() {
          if(user.password==undefined || user.email ==undefined){
           showAlert("Kya kr rha he bhai ye ","danger");
          }
-    const Url_to_login = `${BACKEND_LINK}/api/auth/login`
+    const Url_to_login = ` ${process.env.REACT_APP_BACKEND_LINK}/api/auth/login`
     const response = await fetch(Url_to_login, {
       method: 'POST', // or 'PUT'
       headers: {

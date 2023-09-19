@@ -11,8 +11,9 @@ import VeticalNavbar from "./VeticalNavbar";
 import Horizontalnav from "./Horizontalnav";
 import Loader from "./Loader"
 import Style from "./Styles1.css"
-import BACKEND_LINK from '../Helper';
+// import process.env.REACT_APP_BACKEND_LINK from '../Helper';
 export default function Transaction() {
+  // const process.env.REACT_APP_BACKEND_LINK="https://farminbackendserver.onrender.com/";
   ChartJS.register(ArcElement, Tooltip, Legend,CategoryScale,LinearScale,BarElement);
     const context = useContext(SabjiContext);
     const { month_key,month_val, setup_data, set_setup_data, setup, total,settotal,Delete_by_date,Fetch_all_components,showAlert } = context;
@@ -34,7 +35,7 @@ export default function Transaction() {
         showAlert("Check the dates ! \n Dates could not be in reverse order","danger");
         setLoading(false);
       }else{
-      const url = `${BACKEND_LINK}/api/tools/filterBydate__item`;
+      const url = `${process.env.REACT_APP_BACKEND_LINK}/api/tools/filterBydate__item`;
       const response = await fetch(url, {
         method: "POST", // *GET, POST, PUT, DELETE, etc.
         headers: {
