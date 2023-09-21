@@ -32,10 +32,10 @@ const  SabjiStates=(props)=> {
   //       },
   //     })
   //     const items= await data.json();
-  //     // console.log(custu.allcustomers[0].name)
-  //     // console.log(custu[0]
+  //     // // console.log(custu.allcustomers[0].name)
+  //     // // console.log(custu[0]
   //    await setitem(items.all_Item);
-  //     console.log(items.all_Item)
+  //     // console.log(items.all_Item)
   // }
   // const alltransaction=async()=>{
   //   const url= 'http://localhost:5000/additems/groupItem';
@@ -49,7 +49,7 @@ const  SabjiStates=(props)=> {
   //   });
 
   //   const res_data= await data.json();
-  //   console.log(res_data);
+  //   // console.log(res_data);
   //   settransaction(res_data)
 
   // }
@@ -73,17 +73,17 @@ const  SabjiStates=(props)=> {
        }
       })
       const startup_= await response.json();
-      console.log(startup_);
+      // console.log(startup_);
      await set_setup_data(startup_.data); 
      await set_setup_customer(startup_.Customerdata)
      await set_setup_veges(startup_.vegdata)
      await set_setup_Price(startup_.Pricedata)
-     //  console.log(setup_data)
+     //  // console.log(setup_data)
      setTimeout(()=>{
        let t=0;
        for (let index = 0; index < startup_.data.length; index++) {
          const element = startup_.data[index];
-         console.log(element.total)
+         // console.log(element.total)
          
          t= t+element.total
          settotal(t);
@@ -92,7 +92,7 @@ const  SabjiStates=(props)=> {
        t=0;
        for (let index = 0; index < startup_.Customerdata.length; index++) {
          const element = startup_.Customerdata[index];
-         console.log(element.total)
+         // console.log(element.total)
          
          t= t+element.total
          setcustomertotal(t);
@@ -101,7 +101,7 @@ const  SabjiStates=(props)=> {
        t=0;
        for (let index = 0; index < startup_.vegdata.length; index++) {
          const element = startup_.vegdata[index];
-         console.log(element.total)
+         // console.log(element.total)
          
          t= t+element.total
          setvegtotal(t);
@@ -113,7 +113,7 @@ const  SabjiStates=(props)=> {
    }
 
    const Delete_by_id=async(id)=>{
-    console.log(id)
+    // console.log(id)
     const url= `http://localhost:5000/api/tools/dltItems/${id}`;
     const response= await fetch(url,{
      method: 'DELETE', // *GET, POST, PUT, DELETE, etc.
@@ -124,12 +124,12 @@ const  SabjiStates=(props)=> {
      
     })
     const startup_= await response.json();
-    console.log(startup_); 
+    // console.log(startup_); 
     setup();   
-    console.log("deleted")
+    // console.log("deleted")
   }
   const Delete_by_date=async(date)=>{
-    console.log(date)
+    // console.log(date)
     const url= 'http://localhost:5000/api/tools/dltItem';
     const response= await fetch(url,{
      method: 'DELETE', // *GET, POST, PUT, DELETE, etc.
@@ -140,16 +140,16 @@ const  SabjiStates=(props)=> {
      body: JSON.stringify({date:date})
     })
     const startup_= await response.json();
-    console.log(startup_); 
+    // console.log(startup_); 
     setup();   
-    console.log("deleted")
+    // console.log("deleted")
   }
 
 
 
   const additem=async (element)=>{
     const url= 'http://localhost:5000/api/tools/addItem';
-    console.log("in add item ",element.date )
+    // console.log("in add item ",element.date )
     const data= await fetch(url,{
       method: 'POST', // or 'PUT'
       headers: {
@@ -169,7 +169,7 @@ const  SabjiStates=(props)=> {
     ),
     })
     const newcustomer= await data.json();
-    // console.log(newcustomer.newitem.date.slice(0,10));
+    // // console.log(newcustomer.newitem.date.slice(0,10));
     // setcustomer(customer.concat(newcustomer.new_customer))
     showAlert("item Added","success")
   }
@@ -186,21 +186,21 @@ const  SabjiStates=(props)=> {
 //         },
 //       })
 //       const custu= await datacust.json();
-//       // console.log(custu.allcustomers[0].name)
-//       // console.log(custu[0]
+//       // // console.log(custu.allcustomers[0].name)
+//       // // console.log(custu[0]
 //      setcustomer(custu);
     
 //       // customer.forEach((element)=>{
-//       //     console.log(element)
+//       //     // console.log(element)
 //       // })
 //   //     let arr_cust= custu.array();
-//   // console.log(arr_cust);
+//   // // console.log(arr_cust);
 // //  await custu.forEach((element)=>{
-// //        console.log(element)
+// //        // console.log(element)
 // //   })
 // // for (let index = 0; index < custu.length; index++) {
 // //   const element = custu[index];
-// //   console.log(element)
+// //   // console.log(element)
   
 // // }
 //       const Url_to_Price='http://localhost:5000/add/getprices';
@@ -213,9 +213,9 @@ const  SabjiStates=(props)=> {
 //         },
 //       })
 //       const pricu= await dataprice.json();
-//     //  console.log(pricu)
+//     //  // console.log(pricu)
 //   setprices(pricu)
-// //  console.log(prices)
+// //  // console.log(prices)
 //       const Url_to_veg='http://localhost:5000/add/getVeges';
 //       const dataveg= await fetch(Url_to_veg,{
 //         method: 'get', // or 'PUT'
@@ -226,7 +226,7 @@ const  SabjiStates=(props)=> {
 //         },
 //       })
 //       const veju= await dataveg.json();
-//       console.log(veju);
+//       // console.log(veju);
 //    setveges(veju)
 
 //       const Url_to_qauntities='http://localhost:5000/add/getqauntities';
@@ -239,20 +239,20 @@ const  SabjiStates=(props)=> {
 //         },
 //       })
 //       const quantu= await dataquanta.json();
-//       // console.log(quantu);
+//       // // console.log(quantu);
 //       setquanti(quantu);
-//       // console.log(customer)
+//       // // console.log(customer)
 
 //       // for (let index = 0; index < customer.length; index++) {
 //       //   const ele = customer[index];
 //       //   let arvind=0;
-//       //    console.log(ele)
+//       //    // console.log(ele)
 //       //    for (let i = 0; i < item.length; i++) {
 //       //     const element = item[i];
 //       //       if(element.CustomerName===ele.name)
 //       //       {
 //       //         arvind+=element.price * element.Quantity
-//       //         console.log(arvind)
+//       //         // console.log(arvind)
 //       //       }
 //       //    }
 //       //    let data={
@@ -283,7 +283,7 @@ const  SabjiStates=(props)=> {
     showAlert("Customer Added","success")
   }
   const detetecustomer=async(id)=>{
-    console.log(id)
+    // console.log(id)
     const url= `http://localhost:5000/api/tools/dltCustomer/${id}`;
     
     const data= await fetch(url,{
@@ -295,14 +295,14 @@ const  SabjiStates=(props)=> {
     
     })
     const deletecust= await data.json();
-    // console.log(deletecust);
+    // // console.log(deletecust);
     setcustomer(customer.filter((customer)=>{return customer._id!==id}));
     showAlert("Customer deleted","success")
   }
   // /api/tools
   const add_price=async(price)=>{
     const url= 'http://localhost:5000/api/tools/addPrice';
-      // console.log(price)
+      // // console.log(price)
     const data= await fetch(url,{
       method: 'POST', // or 'PUT'
       headers: {
@@ -317,7 +317,7 @@ const  SabjiStates=(props)=> {
     showAlert("new_price Added","success")
   }
   const deteteprice=async(id)=>{
-    // console.log(id)
+    // // console.log(id)
     const url= `http://localhost:5000/api/tools/dltprice/${id}`;
     
     const data= await fetch(url,{
@@ -329,7 +329,7 @@ const  SabjiStates=(props)=> {
     
     })
     const deleteprice= await data.json();
-    // console.log(deleteprice);
+    // // console.log(deleteprice);
     setprices(prices.filter((prices)=>{return prices._id!==id}));
     showAlert("Price deleted","success")
   }
@@ -350,7 +350,7 @@ const  SabjiStates=(props)=> {
     showAlert("new_veg Added","success")
   }
   const deteteveges=async(id)=>{
-    // console.log(id)
+    // // console.log(id)
     const url= `http://localhost:5000/api/tools/dltVeges/${id}`;
     
     const data= await fetch(url,{
@@ -362,7 +362,7 @@ const  SabjiStates=(props)=> {
     
     })
     const deleteveg= await data.json();
-    // console.log(deleteveg);
+    // // console.log(deleteveg);
     setveges(veges.filter((veges)=>{return veges._id!==id}));
     showAlert("veg deleted","success")
   }
@@ -383,7 +383,7 @@ const  SabjiStates=(props)=> {
     showAlert("new_quantity Added","success")
   }
   const detetequanta=async(id)=>{
-    // console.log(id)
+    // // console.log(id)
     const url= `http://localhost:5000/api/tools/dltQuantity/${id}`;
     
     const data= await fetch(url,{
@@ -395,24 +395,24 @@ const  SabjiStates=(props)=> {
     
     })
     const deleteqaunti= await data.json();
-    // console.log(deleteqaunti);
+    // // console.log(deleteqaunti);
     setquanti(qaunti.filter((qaunti)=>{return qaunti._id!==id}));
     showAlert("qauntity deleted","success")
   }
 
 
   // const arrangedata=async()=>{
-  // //   await console.log(customer)
+  // //   await // console.log(customer)
   // //  for (let index = 0; index < customer.length; index++) {
   // //       const ele = customer[index];
   // //       let arvind=0;
-  // //        console.log(ele)
+  // //        // console.log(ele)
   // //        for (let i = 0; i < item.length; i++) {
   // //         const element = item[i];
   // //           if(element.CustomerName===ele.name)
   // //           {
   // //             arvind+=element.price * element.Quantity
-  // //             console.log(arvind)
+  // //             // console.log(arvind)
   // //           }
   // //        }
   // //        let data={
@@ -424,8 +424,8 @@ const  SabjiStates=(props)=> {
   // //     //  else
   // //     //  set_user(user.concat(data));
   // //      }
-  // // console.log("in arrange data");
-  // // console.log("User is "+ user)
+  // // // console.log("in arrange data");
+  // // // console.log("User is "+ user)
   // }
   //
   return (

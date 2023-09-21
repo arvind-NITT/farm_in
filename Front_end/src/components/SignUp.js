@@ -10,7 +10,7 @@ export default function SignUp() {
     const [user,setUser]=useState(null)
     const Onchange=(e)=>{
       setUser({...user,[e.target.name]:e.target.value})
-     console.log(user)
+     // console.log(user)
     }
     const navigate = useNavigate()
     const onclickhandle= async (e)=>{
@@ -24,14 +24,14 @@ export default function SignUp() {
         },
         body: JSON.stringify( {name:user.name,email:user.email,password:user.password} ),
       })
-      console.log(user);
+      // console.log(user);
       const token = await response.json();
-      // console.log(ret_data);
-    // console.log(token.errors[0].msg)
+      // // console.log(ret_data);
+    // // console.log(token.errors[0].msg)
       if(token.success===true)
       {
         localStorage.setItem('token',token.authtoken);
-        console.log(token.authtoken)
+        // console.log(token.authtoken)
         navigate('/',{replace:true});
          showAlert("Account created Successfully Please Login Once ","success")
       }else{

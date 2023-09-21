@@ -23,15 +23,15 @@ export default function SabjiSates(props) {
   const [total_Quantity, settotal_Quantity] = useState(null);
   //  const [allcomponents,setAllCompo]=useState([{name:"",price:"",qauntity:"",veg:""}]);
   const username_= username;
-  const [transaction, settransaction] = useState([]);
-  const [item, setitem] = useState([]);
+  // const [transaction, settransaction] = useState([]);
+  // const [item, setitem] = useState([]);
   const [customer, setcustomer] = useState([]);
   const [prices, setprices] = useState([]);
   const [veges, setveges] = useState([]);
   const [qaunti, setquanti] = useState([]);
   const [bar_veg, set_barveg] = useState([]);
-  const [Doughnut_customer, set_Doughnut_customer] = useState([]);
-  const [Doughnut_customer_total, set_Doughnut_customer_total] = useState([]);
+  // const [Doughnut_customer, set_Doughnut_customer] = useState([]);
+  // const [Doughnut_customer_total, set_Doughnut_customer_total] = useState([]);
   const [bar_veg_tot, set_barveg_tot] = useState([]);
   const [month_key, set_month_key] = useState([]);
   const [month_val, set_month_val] = useState([]);
@@ -39,12 +39,12 @@ export default function SabjiSates(props) {
   const [data_for_one_veg_details,set_data_for_one_veg_details]=useState([]);
   const [name_of_veg,set_name_of_veg]=useState(null);
   const showAlert = (message, type) => {
-    console.log("show alert called");
+    // console.log("show alert called");
     setAlert({
       message: message,
       type: type,
     });
- console.log(alert)
+ // console.log(alert)
     setTimeout(() => {
       setAlert(null);
     }, 2000);
@@ -61,15 +61,15 @@ export default function SabjiSates(props) {
       },
     });
     const startup_ = await response.json();
-    // console.log(startup_.data); 
+    // // console.log(startup_.data); 
     setusername(startup_.user.name);
     await set_setup_data(startup_.data);
-    console.log(startup_.Customerdata);
-    console.log(startup_.vegdata);
+    // console.log(startup_.Customerdata);
+    // console.log(startup_.vegdata);
     await set_setup_veges(startup_.vegdata);
     await set_setup_Price(startup_.Pricedata);
     await set_setup_Quanta(startup_.AllQuantity);
-    //  console.log(setcustomer)
+    //  // console.log(setcustomer)
     var map = {};
    
     
@@ -82,17 +82,17 @@ export default function SabjiSates(props) {
     }
    
     // startup_.vegdata.f
-    // console.log("SetuPdata",setup_data);
+    // // console.log("SetuPdata",setup_data);
     startup_.data.forEach(element => {
         var key=  element._id.slice(0,7);
         var val=element.total;
-        // console.log(key,val);
+        // // console.log(key,val);
       addValueToList(key,val);
     });
     var month_key1=[];
   var month_val1=[];
      for( let [key,val] of Object.entries(map)){
-      console.log(key,val)
+      // console.log(key,val)
       let s= key.split('/');
       if(s[1]==undefined)
       continue;
@@ -102,7 +102,7 @@ export default function SabjiSates(props) {
      }
      month_key1=month_key1.reverse();
      month_val1=month_val1.reverse();
-console.log(month_key1,month_val1);
+// console.log(month_key1,month_val1);
 
   set_month_key(month_key1);
   set_month_val(month_val1);
@@ -115,7 +115,7 @@ console.log(month_key1,month_val1);
        toatl_quantity= toatl_quantity+  element.total_quantity;
     })
     settotal_Quantity(toatl_quantity);
-    // console.log(bard);
+    // // console.log(bard);
     setbardata_labels(bard);
     // setbardata(bard2);
 
@@ -124,7 +124,7 @@ console.log(month_key1,month_val1);
       let t = 0;
       for (let index = 0; index < startup_.data.length; index++) {
         const element = startup_.data[index];
-        // console.log(element.total)
+        // // console.log(element.total)
 
         t = t + element.total;
         settotal(t);
@@ -132,7 +132,7 @@ console.log(month_key1,month_val1);
       t = 0;
       for (let index = 0; index < startup_.Customerdata.length; index++) {
         const element = startup_.Customerdata[index];
-        // console.log(element.total)
+        // // console.log(element.total)
 
         t = t + element.total;
         setcustomertotal(t);
@@ -142,21 +142,21 @@ console.log(month_key1,month_val1);
       var tt1=[];
       for (let index = 0; index < startup_.vegdata.length; index++) {
         const element = startup_.vegdata[index];
-        // console.log(element.total)
+        // // console.log(element.total)
          tt.push(element.total_quantity);
          tt1.push(element._id);
         t = t + element.total;
         setvegtotal(t);
       }
-      console.log(tt1);
-      console.log(tt);
+      // console.log(tt1);
+      // console.log(tt);
       set_barveg(tt1); 
       set_barveg_tot(tt);
     }, 1000);
     
   };
   const Delete_by_id = async (id) => {
-    console.log(id);
+    // console.log(id);
     const url = `${process.env.REACT_APP_BACKEND_LINK}/api/tools/dltItems/${id}`;
     const response = await fetch(url, {
       method: "DELETE", // *GET, POST, PUT, DELETE, etc.
@@ -165,13 +165,13 @@ console.log(month_key1,month_val1);
         "Access-Control-Allow-Origin": "*",
       },
     });
-    const startup_ = await response.json();
-    console.log(startup_);
+    // const startup_ = await response.json();
+    // console.log(startup_);
     setup();
-    console.log("deleted");
+    // console.log("deleted");
   };
   const Delete_by_date = async (date) => {
-    console.log(date);
+    // console.log(date);
     const url = `${process.env.REACT_APP_BACKEND_LINK}/api/tools/dltItem`;
     const response = await fetch(url, {
       method: "DELETE", // *GET, POST, PUT, DELETE, etc.
@@ -181,15 +181,15 @@ console.log(month_key1,month_val1);
       },
       body: JSON.stringify({ date: date }), 
     });
-    const startup_ = await response.json();
-    console.log(startup_);
+    // const startup_ = await response.json();
+    // console.log(startup_);
     setup();
-    console.log("deleted");
+    // console.log("deleted");
   };
 
   const additem = async (element) => {
     const url = `${process.env.REACT_APP_BACKEND_LINK}/api/tools/addItem`;
-    console.log("in add item ", element.date);
+    // console.log("in add item ", element.date);
     const data = await fetch(url, {
       method: "POST", // or 'PUT'
       headers: {
@@ -205,8 +205,8 @@ console.log(month_key1,month_val1);
         "date": element.date,
       }),
     });
-    const newcustomer = await data.json();
-    // console.log(newcustomer.newitem.date.slice(0,10));
+    // const newcustomer = await data.json();
+    // // console.log(newcustomer.newitem.date.slice(0,10));
     // setcustomer(customer.concat(newcustomer.new_customer))
     showAlert("item Added", "success");
   };
@@ -224,23 +224,23 @@ console.log(month_key1,month_val1);
         },
       });
       const custu = await datacust.json();
-      // console.log(custu.allcustomers[0].name)
-      console.log(custu)
+      // // console.log(custu.allcustomers[0].name)
+      // console.log(custu)
      await setcustomer(custu.Allcustomer);
      await setusername(custu.user.name)
 
 
      custu.Allcustomer.forEach((element)=>{
-          console.log(element)
+          // console.log(element)
       })
       //     let arr_cust= custu.array();
-      // console.log(arr_cust);
+      // // console.log(arr_cust);
       //  await custu.forEach((element)=>{
-      //        console.log(element)
+      //        // console.log(element)
       //   })
       // for (let index = 0; index < custu.length; index++) {
       //   const element = custu[index];
-      //   console.log(element)
+      //   // console.log(element)
 
       // }
       const Url_to_Price = `${process.env.REACT_APP_BACKEND_LINK}/api/tools/Fetchprice`;
@@ -253,9 +253,9 @@ console.log(month_key1,month_val1);
         },
       });
       const pricu = await dataprice.json(); 
-      //  console.log(pricu)
+      //  // console.log(pricu)
       setprices(pricu);
-      //  console.log(prices)
+      //  // console.log(prices)
       const Url_to_veg = `${process.env.REACT_APP_BACKEND_LINK}/api/tools/FetchVeges`;  
       const dataveg = await fetch(Url_to_veg, {
         method: "get", // or 'PUT'
@@ -266,7 +266,7 @@ console.log(month_key1,month_val1);
         },
       });
       const veju = await dataveg.json();
-      console.log(veju);
+      // console.log(veju);
       setveges(veju);
 
       const Url_to_qauntities = `${process.env.REACT_APP_BACKEND_LINK}/api/tools/FetchQuantity`;
@@ -279,20 +279,20 @@ console.log(month_key1,month_val1);
         },
       });
       const quantu = await dataquanta.json();
-      // console.log(quantu);
+      // // console.log(quantu);
       setquanti(quantu);
-      // console.log(customer)
+      // // console.log(customer)
 
       // for (let index = 0; index < customer.length; index++) {
       //   const ele = customer[index];
       //   let arvind=0;
-      //    console.log(ele)
+      //    // console.log(ele)
       //    for (let i = 0; i < item.length; i++) {
       //     const element = item[i];
       //       if(element.CustomerName===ele.name)
       //       {
       //         arvind+=element.price * element.Quantity
-      //         console.log(arvind)
+      //         // console.log(arvind)
       //       }
       //    }
       //    let data={
@@ -317,7 +317,7 @@ console.log(month_key1,month_val1);
 
     }
     const url = `${process.env.REACT_APP_BACKEND_LINK}/api/tools/addItem`;
-    // console.log("in add item ", element.date);
+    // // console.log("in add item ", element.date);
     const data = await fetch(url, {
       method: "POST", // or 'PUT'
       headers: {
@@ -333,13 +333,13 @@ console.log(month_key1,month_val1);
         "date": element.date,
       }),
     });
-    const newcustomer = await data.json();
-    // console.log(newcustomer.newitem.date.slice(0,10));
+    // const newcustomer = await data.json();
+    // // console.log(newcustomer.newitem.date.slice(0,10));
     // setcustomer(customer.concat(newcustomer.new_customer))
     showAlert("item Added", "success");
     setup();
     const url1 = `${process.env.REACT_APP_BACKEND_LINK}/api/tools/addCustomer`;
-    console.log(name);
+    // console.log(name);
     const data1 = await fetch(url1, {
       method: "POST", // or 'PUT'
       headers: {
@@ -360,14 +360,14 @@ console.log(month_key1,month_val1);
   const detetecustomer  = async (id) => {
         let name="" ;
         customer.forEach((element)=>{
-          console.log(element);
+          // console.log(element);
           if(element.name===id){
             name=element.user;
             
           } 
       })  
 
-    console.log(name,id);
+    // console.log(name,id);
     const url = `${process.env.REACT_APP_BACKEND_LINK}/api/tools/dltCustomer`;
 
     const data = await fetch(url, {
@@ -378,8 +378,8 @@ console.log(month_key1,month_val1);
       },
       body: JSON.stringify({"name" : id,"userid":name})
     });
-    const deletecust = await data.json();
-    console.log(deletecust);
+    // const deletecust = await data.json();
+    // console.log(deletecust);
     setcustomer(
       customer.filter((customer) => { 
         return customer._id !== id;
@@ -399,7 +399,7 @@ console.log(month_key1,month_val1);
 
     }
     const url = `${process.env.REACT_APP_BACKEND_LINK}/api/tools/addItem`;
-    // console.log("in add item ", element.date);
+    // // console.log("in add item ", element.date);
     const data = await fetch(url, {
       method: "POST", // or 'PUT'
       headers: {
@@ -415,7 +415,7 @@ console.log(month_key1,month_val1);
         "date": element.date,
       }),
     });
-    const newcustomer = await data.json();
+    // const newcustomer = await data.json();
     const url1 = `${process.env.REACT_APP_BACKEND_LINK}/api/tools/addveges`;
 
     const data1 = await fetch(url1, {
@@ -433,17 +433,17 @@ console.log(month_key1,month_val1);
     showAlert("new_veg Added", "success");
   };
   const deteteveges = async (id) => {
-    // console.log(id)
+    // // console.log(id)
   let name="" ;
         veges.forEach((element)=>{
-          console.log(element);
+          // console.log(element);
           if(element.name===id){
             name=element.user;
             
           } 
       })  
 
-    console.log(name,id);
+    // console.log(name,id);
 
     const url = `${process.env.REACT_APP_BACKEND_LINK}/api/tools/dltVeges`;
 
@@ -455,8 +455,8 @@ console.log(month_key1,month_val1);
       },
    body: JSON.stringify({"name" : id,"userid":name})
     });
-    const deleteveg = await data.json();
-    // console.log(deleteveg);
+    // const deleteveg = await data.json();
+    // // console.log(deleteveg);
     setveges(
       veges.filter((veges) => {
         return veges._id !== id;
@@ -522,3 +522,4 @@ console.log(month_key1,month_val1);
     </SabjiContext.Provider>
   );
 }
+ 

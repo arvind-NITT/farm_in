@@ -1,8 +1,8 @@
-import React, { useEffect, useContext, useState } from "react"
-import { useNavigate, Link, Outlet } from "react-router-dom";
-import SabjiContext from "../context/Contexts";
-import HorizontalNavbar from "./Horizontalnav";
-import Style from './Styles.css'
+import React from "react"
+// import { useNavigate, Link, Outlet } from "react-router-dom";
+// import SabjiContext from "../context/Contexts";
+// import HorizontalNavbar from "./Horizontalnav";
+// import Style from './Styles.css'
 export default function Homepage(){
   
   return( <div>  

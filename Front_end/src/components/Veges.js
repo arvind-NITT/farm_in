@@ -1,19 +1,19 @@
 import React, { useEffect, useContext,useRef,useState } from 'react'
-import { useNavigate, Link, Outlet } from 'react-router-dom';
+import { useNavigate} from 'react-router-dom';
 import SabjiContext from '../context/Contexts';
 import Horizontalnav from "./Horizontalnav";
 import Style from './Styles.css'
-import Style1 from './Styles1.css'
-import Alert from './Alert';
-import VerticalNavbar from './VerticalNavbar';
+// import Style1 from './Styles1.css'
+// import Alert from './Alert';
+// import VerticalNavbar from './VerticalNavbar';
 export default function Veges() {
  
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [cust_name,set_cust_name]= useState({name:""});
   const ref= useRef();
   const closeref= useRef();
   const context = useContext(SabjiContext);
-  const { showAlert, arrangedata,veges,deteteveges, Fetch_all_components,setveges ,add_veges} = context;
+  const { veges,deteteveges, Fetch_all_components ,add_veges} = context;
 
   useEffect(() => {
 
@@ -26,7 +26,7 @@ export default function Veges() {
   }
   const onchange=(e)=>{
     set_cust_name({...cust_name,[e.target.name]:e.target.value})
-    console.log(cust_name);
+    // console.log(cust_name);
   }
   const onsubmit=async()=>{
     
@@ -37,12 +37,12 @@ export default function Veges() {
     if(month<10)
     month='0'+month;
     let realdate= year+"/"+month+"/"+day;
-    console.log(day,month,year,realdate)
+    // console.log(day,month,year,realdate)
     add_veges(cust_name.name,realdate);
     closeref.current.click();
   }
   // const ondelete=()=>{
-  //   console.log(cust_name)
+  //   // console.log(cust_name)
   //   detetecustomer(cust_name._id);
 
   // }

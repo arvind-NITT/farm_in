@@ -1,13 +1,13 @@
-import React, { useEffect, useContext, useState, Children } from 'react'
-import { useNavigate, Link, Outlet } from 'react-router-dom';
+import React, { useEffect, useContext, useState } from 'react'
+// import { useNavigate, Link, Outlet } from 'react-router-dom';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend, CategoryScale, LinearScale, BarElement } from "chart.js";
-import { Bar, Doughnut } from "react-chartjs-2";
+import { Bar } from "react-chartjs-2";
 // import SabjiSates from "../context/SabjiSates";
 import { useScrollBy } from "react-use-window-scroll";
 
 import SabjiContext from "../context/Contexts";
-import VerticalNavbar from "./VerticalNavbar";
-import VeticalNavbar from "./VeticalNavbar";
+// import VerticalNavbar from "./VerticalNavbar";
+// import VeticalNavbar from "./VeticalNavbar";
 import Horizontalnav from "./Horizontalnav";
 import Loader from "./Loader"
 import Style from "./Styles1.css"
@@ -20,17 +20,17 @@ export default function Transaction() {
     const [Loading, setLoading] = useState(false);
     const Scrollby= useScrollBy();
     // let datedata= null; 
-    console.log(month_key);
+    // console.log(month_key);
     const fetchbydate = async () => {    
       setLoading(true);
       let firstdate = document.getElementById("from");
       let seconddate = document.getElementById("to");
-      console.log(firstdate.value, seconddate.value);
+      // console.log(firstdate.value, seconddate.value);
       let s = firstdate.value;
       let d = seconddate.value;
       let from = s.replace(/-/g, "/");
       let to = d.replace(/-/g, "/");
-      console.log(from, to);
+      // console.log(from, to);
       if(from>to){
         showAlert("Check the dates ! \n Dates could not be in reverse order","danger");
         setLoading(false);
@@ -49,7 +49,7 @@ export default function Transaction() {
         }),
       });
       const startup_ = await response.json();
-      console.log(startup_);
+      // console.log(startup_);
       
       setTimeout(() => {
         setLoading(false);
@@ -57,7 +57,7 @@ export default function Transaction() {
         let t = 0;
       for (let index = 0; index < startup_.length; index++) {
         const element = startup_[index];
-        // console.log(element.total)
+        // // console.log(element.total)
 
         t = t + element.total;
        

@@ -1,12 +1,12 @@
 import React, { useContext } from 'react'
-import { useNavigate, Link, Outlet } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import SabjiContext from '../context/Contexts';
 import Style from './Styles.css'
 export default function Horizontalnav(){
    const navigate= useNavigate();
     const context = useContext(SabjiContext);
     const { username} = context;
-    // console.log(username);
+    // // console.log(username);
     if(username==""){
       navigate('/')
     }

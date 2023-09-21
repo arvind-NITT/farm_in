@@ -27,7 +27,7 @@ export default function Prices() {
   }
   const onchange=(e)=>{
     set_price({... Price_,[e.target.name]:e.target.value})
-    console.log( Price_);
+    // console.log( Price_);
   }
   const onsubmit=async()=>{
     let date= new Date();
@@ -37,12 +37,12 @@ export default function Prices() {
     if(month<10)
     month='0'+month;
     let realdate= year+"/"+month+"/"+day;
-    console.log(day,month,year,realdate)
+    // console.log(day,month,year,realdate)
     add_price(Price_.name,realdate);
     closeref.current.click();
   }
   // const ondelete=()=>{
-  //   console.log( Price_)
+  //   // console.log( Price_)
   //   detetecustomer( Price_._id);
 
   // }

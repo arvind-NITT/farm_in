@@ -8,11 +8,11 @@ import Style from './Styles1.css'
 export default function Verifyotpsendbyforgotpassword(){
   // const process.env.REACT_APP_BACKEND_LINK="https://farminbackendserver.onrender.com/";
     const context= useContext(SabjiContext);  
-    const { showAlert,username,setusername}=context;
+    const { showAlert}=context;
     const [user,setUser]=useState(null)
     const Onchange=(e)=>{
       setUser({...user,[e.target.name]:e.target.value})
-     console.log(user)
+     // console.log(user)
      
     }
     const navigate = useNavigate()
@@ -26,14 +26,14 @@ export default function Verifyotpsendbyforgotpassword(){
         },
         body: JSON.stringify( {email:user.email} ),
       })
-      console.log(user);
+      // console.log(user);
       const token = await response.json();
-      // console.log(ret_data);
-    // console.log(token.errors[0].msg)
+      // // console.log(ret_data);
+    // // console.log(token.errors[0].msg)
       if(token.success===true)
       {
         // localStorage.setItem('token',token.authtoken);
-        // console.log(token.authtoken)
+        // // console.log(token.authtoken)
         // navigate('/ResetPassword',{replace:true});
          showAlert("Please check your Mail","success")
       }else{
@@ -50,14 +50,14 @@ export default function Verifyotpsendbyforgotpassword(){
         },
         body: JSON.stringify( {email:user.email,otp:user.otp} ),
       })
-      console.log(user); 
+      // console.log(user); 
       const token = await response.json();
-      // console.log(ret_data);
-    // console.log(token.errors[0].msg)
+      // // console.log(ret_data);
+    // // console.log(token.errors[0].msg)
       if(token.success===true)
       {
         // localStorage.setItem('token',token.authtoken);
-        // console.log(token.authtoken)
+        // // console.log(token.authtoken)
         navigate('/ResetPassword',{replace:true});
          showAlert("Verified","success")
       }else{

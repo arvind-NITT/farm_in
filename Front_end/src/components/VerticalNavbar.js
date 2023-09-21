@@ -11,14 +11,12 @@ export default function VerticalNavbar() {
         showAlert("LogOut! Please Login to Begin", "success")
         navigate('/', { replace: true })
       }
-      const alltransaction=async()=>{
-              
-      }
-    const mystyle={ "textDecoration":"none" ,"height": "3rem","width":"20rem" ,"listStyle": "none",   background: "linear-gradient(124deg, rgb(214,168,152) 81%, transparent)"
-    }
-    const mystyle2={ "textDecoration":"none" ,"height": "50px","width":"300px" ,"listStyle": "none",   background: "linear-gradient(124deg, rgb(214,168,152) 81%, transparent)",
+
+    // const mystyle={ "textDecoration":"none" ,"height": "3rem","width":"20rem" ,"listStyle": "none",   background: "linear-gradient(124deg, rgb(214,168,152) 81%, transparent)"
+    // }
+    // const mystyle2={ "textDecoration":"none" ,"height": "50px","width":"300px" ,"listStyle": "none",   background: "linear-gradient(124deg, rgb(214,168,152) 81%, transparent)",
     
-    }
+    // }
   return (
     <div className=' position-fixed mt-3 d-flex flex-column flex-wrap flex-sm-wrap navbar navbar-expand-lg'>
       <div className="  d-flex justify-content-center text-center flex-wrap">

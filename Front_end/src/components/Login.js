@@ -1,17 +1,17 @@
 import React,{useContext, useState} from 'react'
 import { useNavigate } from 'react-router-dom';
 import SabjiContext from '../context/Contexts';
-import { Link,Outlet } from 'react-router-dom';
+// import { Link,Outlet } from 'react-router-dom';
 import Style from './Styles1.css'
 // import  BACKEND_LINK from '../Helper';
 export default function Login() {
   const context= useContext(SabjiContext);  
   // const BACKEND_LINK="https://farminbackendserver.onrender.com/";
-  const { showAlert,username,setusername}=context;
+  const { showAlert,setusername}=context;
   const [user,setUser]=useState(null)
   const Onchange=(e)=>{
     setUser({...user,[e.target.name]:e.target.value})
-   console.log(user)
+   // console.log(user)
    
   }
   const navigate = useNavigate()
@@ -29,14 +29,14 @@ export default function Login() {
       },
       body: JSON.stringify( {name:user.name,email:user.email,password:user.password} ),
     })
-    console.log(user);
+    // console.log(user);
     const token = await response.json();
-    // console.log(ret_data);
-  // console.log(token.errors[0].msg)
+    // // console.log(ret_data);
+  // // console.log(token.errors[0].msg)
     if(token.success===true) 
     {
       // localStorage.setItem('token',token.authtoken);
-      // console.log(token.authtoken)
+      // // console.log(token.authtoken)
       navigate('/Verifyotp',{replace:true});
        showAlert("Check your mail ","success")
     }else{
@@ -44,9 +44,9 @@ export default function Login() {
       }
   }
   const onclickhandle= async (e)=>{
-    console.log("Le tera user dekh le",user.password);
+    // console.log("Le tera user dekh le",user.password);
 
-     console.log(user.password);
+     // console.log(user.password);
          if(user.password==undefined || user.email ==undefined){
           showAlert("Kya kr rha he bhai ye ","danger");
          }
@@ -60,9 +60,9 @@ export default function Login() {
       body: JSON.stringify( {email:user.email,password:user.password} ),
     })
     const token = await response.json(); 
-    // console.log(ret_data); 
+    // // console.log(ret_data); 
 
-  console.log(token) 
+  // console.log(token) 
     if(token.success===true)
     {
       localStorage.setItem('token',token.authtoken);

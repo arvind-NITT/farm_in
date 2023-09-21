@@ -32,14 +32,14 @@ export default function One_veg_detail() {
         // eslint-disable-next-line
       },[]
       )
-      console.log(label_for_one_veg_details,data_for_one_veg_details)
+      // console.log(label_for_one_veg_details,data_for_one_veg_details)
       // const xValues = data_for_one_veg_details;
     var xValues =[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
     let count=0;
        for( let key in label_for_one_veg_details){
         // var key=  ;
-        // console.log(key);
-        // console.log("inside");
+        // // console.log(key);
+        // // console.log("inside");
         let s= label_for_one_veg_details[key].split('/');
         let year = parseInt(s[1]);
         if(year==NaN)
@@ -47,7 +47,7 @@ export default function One_veg_detail() {
         let ind=   parseInt(s[0]);
         if(year==2023)
           ind+=12;
-          console.log(ind,year);
+          // console.log(ind,year);
         //  let p= s[1] +"/" + s[0];
         xValues[ind-1]= data_for_one_veg_details[count];
         count++;
@@ -57,7 +57,7 @@ export default function One_veg_detail() {
 
 
       // const yValues = [7,8,8,9,9,9,10,11,14,14,15];
-      // console.log(data_for_one_veg_details)
+      // // console.log(data_for_one_veg_details)
       // const labels = [""];
       
       const labels = ['January 2022', 'February 2022', 'March 2022', 'April 2022', 'May 2022', 'June 2022', 'July 2022','August 2022','September 2022','October 2022','November 2022','December 2022','January 2023','Fabeury 2023'];

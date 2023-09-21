@@ -1,7 +1,7 @@
 import React, { useEffect, useContext, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import SabjiContext from "../context/Contexts";
-import VerticalNavbar from "./VerticalNavbar";
+// import VerticalNavbar from "./VerticalNavbar";
 import Style from "./Styles1.css"
 import Horizontalnav from "./Horizontalnav";
 // import Alert from './Alert';
@@ -17,7 +17,7 @@ export default function Item() {
   // let y= document.getElementById('Quanta')
 
   const ref = useRef();
-  const [i, seti] = useState(0);
+  // const [i, seti] = useState(0);
   const tableref = useRef();
   const context = useContext(SabjiContext);
   const {
@@ -36,13 +36,13 @@ export default function Item() {
     // arrangedata();
     // eslint-disable-next-line
   }, []);
-  const addcust = () => {
-    ref.current.click();
-  };
-  const onchange = (e) => {
-    set_data({ ...data, [e.target.name]: e.target.value });
-    console.log(data);
-  };
+  // const addcust = () => {
+  //   ref.current.click();
+  // };
+  // const onchange = (e) => {
+  //   set_data({ ...data, [e.target.name]: e.target.value });
+  //   // console.log(data);
+  // };
   // const onsubmit = async () => {
   //   add_price(data.name);
   //   closeref.current.click();
@@ -93,37 +93,37 @@ export default function Item() {
     var table = document.getElementById("table");
     var rowclone = row.cloneNode(true);
     rowclone.id = count;
-    console.log(count);
+    // console.log(count);
     table.appendChild(rowclone);
     //  additem();
     // collect_data();
-    // console.log(data);
+    // // console.log(data);
     await set_count(count + 1);
     // set_data(x.value*y.value)
   };
   function delete_row() {
-    console.log(count);
+    // console.log(count);
     var table = document.getElementById("table");
-    console.log("id ", table.lastChild);
+    // console.log("id ", table.lastChild);
     table.deleteRow(count);
     set_count(count - 1);
   }
 
   const collect_data = async () => {
     // var date= new Date;}
-    // console.log(date.toLocaleDateString())
-    // console.log(date.getDate(),date.getMonth()+1,date.getFullYear())
+    // // console.log(date.toLocaleDateString())
+    // // console.log(date.getDate(),date.getMonth()+1,date.getFullYear())
     // let realdate= date.getDate()+'-'+(date.getMonth()+1).toString()+'-'+date.getFullYear();
-    // console.log(realdate)
+    // // console.log(realdate)
     // var realdate= date.toLocaleDateString()
     let realdate;
     var flag= false;
     if (custome) {
       let firstdate = document.getElementById("customedate");
-      console.log(firstdate.value);
+      // console.log(firstdate.value);
       let s = firstdate.value;
       let cust_date = s.replace(/-/g, "/");
-      console.log(cust_date);
+      // console.log(cust_date);
       realdate = cust_date;
     } else {
       let date= new Date();
@@ -134,18 +134,18 @@ export default function Item() {
       if (day < 10) day = "0" + day;
  
       realdate = year + "/" + month + "/" + day;
-      console.log(day, month, year, realdate);
+      // console.log(day, month, year, realdate);
     }
-    console.log(realdate);
+    // console.log(realdate);
     var ele = document.getElementsByTagName("select");
     // var ele_input = document.getElementById("Quanta");
     var ele_input = document.getElementsByTagName("input");
     var ele_input_price = document.getElementById("price");
-    console.log(ele.length);
+    // console.log(ele.length);
     const size = await ele.length;
     for (let index = 0; index < size; index++) {
       const element = ele[index];
-      console.log(element.value);
+      // console.log(element.value);
       let one = ele[index].value;
       
       var three =parseFloat(ele_input[index+1].value) ;
@@ -154,9 +154,9 @@ export default function Item() {
      
       
       let four =parseFloat(ele_input[index+1].value);
-      console.log(one, two, three, four);
+      // console.log(one, two, three, four);
       if(isNaN(three) || isNaN(four)){
-        console.log("Flag true");
+        // console.log("Flag true");
         showAlert("Please Fill all the required values","danger");
        //  navigate("/transactions");
        flag= true;
@@ -170,9 +170,9 @@ export default function Item() {
         Price: four,
         date: realdate
       };
-     console.log(data_);
+     // console.log(data_);
       set_collecteddata(collecteddata.push(data_));
-      console.log(collecteddata);
+      // console.log(collecteddata);
     }
     for (let index = 0; index < collecteddata.length; index++) {
       const element = collecteddata[index];
@@ -191,17 +191,17 @@ export default function Item() {
 
   const showdetail = async () => {
     var date = new Date();
-    console.log(date.toLocaleDateString());
+    // console.log(date.toLocaleDateString());
     var ele = document.getElementsByTagName("select");
     // var ele_input = document.getElementById("Quanta");
     var ele_input = document.getElementsByTagName("input");
     // var ele_input_price = document.getElementById("price");
-    console.log(ele.length);
+    // console.log(ele.length);
     const size = await ele.length;
   var flag= false;
     for (let index = 0; index < size; index++) {
       const element = ele[index];
-      console.log(element.value);
+      // console.log(element.value);
       let one = ele[index].value;
       
       var three =parseFloat(ele_input[index+1].value) ;
@@ -210,9 +210,9 @@ export default function Item() {
      
       
       let four =parseFloat(ele_input[index+1].value);
-      console.log(one, two, three, four);
+      // console.log(one, two, three, four);
       if(isNaN(three) || isNaN(four)){
-        console.log("Flag true");
+        // console.log("Flag true");
         showAlert("Please First Fill all the required values","danger");
        //  navigate("/transactions");
        flag= true;
@@ -231,11 +231,11 @@ export default function Item() {
       //   quantity: four,
       // };
       //   set_collecteddata(collecteddata.push(data_));
-        console.log(qua_map)
+        // console.log(qua_map)
     }
     let text= " hello";
     qua_map.forEach(function(value,key){
-      console.log(key,value)
+      // console.log(key,value)
      text +=  key + " * " + value + " = " + "<br/>"
      })
     //
@@ -245,18 +245,18 @@ export default function Item() {
     // }
     if(!flag)
     set_total(total);
-    console.log(total);
+    // console.log(total);
   };
   const customDate = () => {
     let firstdate = document.getElementById("customedate");
     // let seconddate = document.getElementById("to");
-    console.log(firstdate.value);
+    // console.log(firstdate.value);
     let s = firstdate.value;
     // let d = seconddate.value;
     let date = s.replace(/-/g, "/"); 
     // let to = d.replace(/-/g, "/");
     set_custome(true);
-    console.log(date);
+    // console.log(date);
   };
   return ( 
    

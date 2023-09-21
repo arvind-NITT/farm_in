@@ -27,7 +27,7 @@ export default function Customer() {
   }
   const onchange = (e) => {
     set_cust_name({ ...cust_name, [e.target.name]: e.target.value })
-    console.log(cust_name);
+    // // console.log(cust_name);
   }
   const onsubmit = async () => {
      let date= new Date();
@@ -37,10 +37,10 @@ export default function Customer() {
      if(month<10)
      month='0'+month;
      let realdate= year+"/"+month+"/"+day;
-     console.log(day,month,year,realdate)
+    //  // console.log(day,month,year,realdate)
      var name=cust_name.name;
      var spl= name.split(" ");
-     console.log(spl);
+    //  // console.log(spl);
      var Capname="";
      for(let i=0;i<spl.length;i++){
        var sli= spl[i].slice(1);
@@ -56,7 +56,7 @@ export default function Customer() {
      closeref.current.click();
   }
   // const ondelete=()=>{
-  //   console.log(cust_name)
+  //   // console.log(cust_name)
   //   detetecustomer(cust_name._id);
 
   // }

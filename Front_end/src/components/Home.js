@@ -63,7 +63,7 @@ export default function Home() {
 var month_key1=[];
 var month_val1=[];
    for( let [key,val] of Object.entries(map1)){
-    console.log(key,val)
+    // console.log(key,val)
     
      month_key1.push(key);
      month_val1.push(val);
@@ -93,7 +93,7 @@ var month_val1=[];
   }
   const onchange = (e) => {
     set_cust_name({ ...cust_name, [e.target.name]: e.target.value })
-    console.log(cust_name);
+    // console.log(cust_name);
   }
   const onsubmit = async () => {
      let date= new Date();
@@ -103,10 +103,10 @@ var month_val1=[];
      if(month<10)
      month='0'+month;
      let realdate= year+"/"+month+"/"+day;
-     console.log(day,month,year,realdate)
+     // console.log(day,month,year,realdate)
      var name=cust_name.name;
      var spl= name.split(" ");
-     console.log(spl);
+     // console.log(spl);
      var Capname="";
      for(let i=0;i<spl.length;i++){
        var sli= spl[i].slice(1);
@@ -130,7 +130,7 @@ var month_val1=[];
     if(month<10)
     month='0'+month;
     let realdate= year+"/"+month+"/"+day;
-    console.log(day,month,year,realdate)
+    // console.log(day,month,year,realdate)
     add_veges(cust_name.name,realdate);
     closeref1.current.click();
   }
@@ -388,19 +388,19 @@ var month_val1=[];
 
 //   const [usrdata, setuseradata] = useState([]);
 //   let total_money = 0;
-//   //  console.log(item)
+//   //  // console.log(item)
 //   // const detailsprovided=async()=>{
-//   // //   await console.log(customer)
+//   // //   await // console.log(customer)
 //   // //   for (let index = 0; index < customer.length; index++) {
 //   // //        const ele = customer[index];
 //   // //        let arvind=0;
-//   // //         console.log(ele)
+//   // //         // console.log(ele)
 //   // //         for (let i = 0; i < item.length; i++) {
 //   // //          const element = item[i];
 //   // //            if(element.CustomerName===ele.name)
 //   // //            {
 //   // //              arvind+=element.price * element.Quantity
-//   // //              console.log(arvind)
+//   // //              // console.log(arvind)
 //   // //            }
 //   // //         }
 
@@ -416,14 +416,14 @@ var month_val1=[];
 //   // //   for (let index = 0; index < veges.length; index++) {
 //   // //        const ele = veges[index];
 //   // //        let arvind=0;
-//   // //         console.log(ele)
+//   // //         // console.log(ele)
 //   // //         for (let i = 0; i < item.length; i++) {
 //   // //          const element = item[i];
 //   // //            if(element.ItemName===ele.Vegname)
 //   // //            {
 //   // //              arvind+=element.price * element.Quantity
 
-//   // //              console.log(arvind)
+//   // //              // console.log(arvind)
 //   // //            }
 //   // //         }
 //   // //         total_money+=arvind;
@@ -441,11 +441,11 @@ var month_val1=[];
 //   // //           "total_money":total_money
 //   // //         }
 //   // //         await setuseradata(usrdata.push(data));
-//   // // //  console.log("in arrange data");
-//   // // //  console.log("User is "+ user)
+//   // // //  // console.log("in arrange data");
+//   // // //  // console.log("User is "+ user)
 //   // //   set_user(usrdata)
 //   // // // arrangedata();
-//   // // console.log(usrdata)
+//   // // // console.log(usrdata)
 //   //   navigate('/customerdetails')
 //   // }
 
